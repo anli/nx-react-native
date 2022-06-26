@@ -5,7 +5,7 @@ require_relative '../node_modules/@nrwl/react-native/nx_post_install'
 platform :ios, '11.0'
 install! 'cocoapods', :deterministic_uuids => false
 
-target 'HabitApp' do
+target 'Habit' do
   config = use_native_modules!
 
   # Flags change depending on the env values.
@@ -20,7 +20,7 @@ target 'HabitApp' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'HabitAppTests' do
+  target 'HabitTests' do
     inherit! :complete
     # Pods for testing
   end

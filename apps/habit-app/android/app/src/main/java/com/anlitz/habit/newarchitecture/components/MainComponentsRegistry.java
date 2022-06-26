@@ -1,4 +1,4 @@
-package com.habitapp.newarchitecture.components;
+package com.anlitz.habit.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

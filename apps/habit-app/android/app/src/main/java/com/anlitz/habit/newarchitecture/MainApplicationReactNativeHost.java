@@ -1,4 +1,4 @@
-package com.habitapp.newarchitecture;
+package com.anlitz.habit.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.habitapp.BuildConfig;
-import com.habitapp.newarchitecture.components.MainComponentsRegistry;
-import com.habitapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.anlitz.habit.BuildConfig;
+import com.anlitz.habit.newarchitecture.components.MainComponentsRegistry;
+import com.anlitz.habit.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
