@@ -81,6 +81,14 @@
           "codeCoverage": true
         }
       }
+    },
+    "type-check": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "tsc -b",
+        "cwd": "apps/habit-app"
+      }
     }
   },
   "tags": []
