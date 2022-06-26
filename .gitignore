@@ -103,3 +103,8 @@ buck-out/
 apps/habit-app-e2e/artifacts
 
 **/node_modules
+
+# git secret
+.gitsecret/keys/random_seed
+!*.secret
+**/.env
