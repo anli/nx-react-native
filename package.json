@@ -7,6 +7,7 @@
     "build": "nx build",
     "ios": "nx run-ios",
     "lint": "nx affected:lint",
+    "pod-install": "nx affected --target=pod-install",
     "start": "nx serve",
     "test": "nx affected:test",
     "type-check": "nx affected --target=type-check"
