@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react'
+import React, { FunctionComponent } from 'react'
 import { SafeAreaView, Text } from 'react-native'
 
-const App = (): ReactNode => {
+const App: FunctionComponent = () => {
   return (
     <SafeAreaView>
       <Text>Welcome</Text>
