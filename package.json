@@ -10,6 +10,7 @@
     "pod-install": "nx affected --target=pod-install",
     "start": "nx serve",
     "test": "nx affected:test",
+    "test-coverage": "rm -rf coverage && npx nx run-many --all --target=test --configuration=coverage --skip-nx-cache && node tools/combine-coverage-final.js && nyc merge coverage coverage/combine-coverage/coverage.json && nyc report -t coverage/combine-coverage --report-dir coverage/combine-coverage --reporter=html --reporter=lcov",
     "type-check": "nx affected --target=type-check"
   },
   "private": true,
@@ -54,6 +55,7 @@
     "metro-react-native-babel-preset": "0.71.1",
     "metro-resolver": "0.71.1",
     "nx": "14.3.6",
+    "nyc": "^15.1.0",
     "prettier": "^2.6.2",
     "react-native-config": "1.4.6",
     "react-native-svg": "12.3.0",
