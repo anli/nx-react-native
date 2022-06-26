@@ -6,8 +6,9 @@
     "android": "nx run-android",
     "build": "nx build",
     "ios": "nx run-ios",
+    "lint": "nx affected:lint",
     "start": "nx serve",
-    "test": "nx test"
+    "test": "nx affected:test"
   },
   "private": true,
   "devDependencies": {
