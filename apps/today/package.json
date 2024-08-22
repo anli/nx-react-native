@@ -34,7 +34,12 @@
     "react-native-screens": "*",
     "expo-linking": "*",
     "expo-constants": "*",
-    "expo-status-bar": "*"
+    "expo-status-bar": "*",
+    "expo-system-ui": "*",
+    "react-native-paper": "*",
+    "@expo/vector-icons": "*",
+    "@react-navigation/native": "*",
+    "expo-navigation-bar": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/today && cp yarn.lock apps/today",
