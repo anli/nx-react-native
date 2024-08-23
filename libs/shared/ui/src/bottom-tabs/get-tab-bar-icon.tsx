@@ -1,5 +1,6 @@
-import Icon from '@expo/vector-icons/MaterialCommunityIcons';
 import { ComponentProps } from 'react';
+
+import Icon from '@expo/vector-icons/MaterialCommunityIcons';
 
 type IconName = ComponentProps<typeof Icon>['name'];
 

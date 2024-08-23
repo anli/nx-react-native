@@ -1,17 +1,15 @@
 import { View, Text, StyleSheet } from 'react-native';
 
-export default () => {
-  return (
-    <View style={styles.container}>
-      <Text>Tab [Home|Settings]</Text>
-    </View>
-  );
-};
+export default () => (
+  <View style={styles.container}>
+    <Text>Tab [Home|Settings]</Text>
+  </View>
+);
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: 'center',
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
   },
 });

@@ -1,13 +1,14 @@
 import { useColorScheme } from 'react-native';
+
+import {
+  DarkTheme as NavigationDarkTheme,
+  DefaultTheme as NavigationDefaultTheme,
+} from '@react-navigation/native';
 import {
   MD3DarkTheme,
   MD3LightTheme,
   adaptNavigationTheme,
 } from 'react-native-paper';
-import {
-  DarkTheme as NavigationDarkTheme,
-  DefaultTheme as NavigationDefaultTheme,
-} from '@react-navigation/native';
 
 const customLightThemeColors = {
   primary: 'rgb(135, 82, 0)',

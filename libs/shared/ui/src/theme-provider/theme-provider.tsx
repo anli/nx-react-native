@@ -1,7 +1,8 @@
-import { PaperProvider, ProviderProps } from 'react-native-paper';
 import { ThemeProvider as NavigationThemeProvider } from '@react-navigation/native';
-import { useTheme } from './use-theme';
+import { PaperProvider, ProviderProps } from 'react-native-paper';
+
 import { useNavigationBar } from './use-navigation-bar';
+import { useTheme } from './use-theme';
 
 export const ThemeProvider = ({ children, ...rest }: ProviderProps) => {
   const theme = useTheme();

@@ -1,14 +1,16 @@
-import * as NavigationBar from 'expo-navigation-bar';
 import { useEffect } from 'react';
-import { Theme } from './use-theme';
 import { Platform } from 'react-native';
+
+import * as NavigationBar from 'expo-navigation-bar';
+
+import { Theme } from './use-theme';
 
 export const useNavigationBar = (theme: Theme) => {
   const navigationBarColor = theme.colors.elevation.level2;
 
   useEffect(() => {
     Platform.OS === 'android' &&
-      NavigationBar.setBackgroundColorAsync(navigationBarColor);
+      void NavigationBar.setBackgroundColorAsync(navigationBarColor);
   }, [navigationBarColor]);
 
   return NavigationBar;
