@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@expo/cli": "~0.18.13",
+    "@faker-js/faker": "^8.4.1",
     "@nx/eslint": "19.6.1",
     "@nx/eslint-plugin": "19.6.1",
     "@nx/expo": "19.6.1",
