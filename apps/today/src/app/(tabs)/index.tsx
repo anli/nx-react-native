@@ -1,15 +1,13 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
+
+import { tw } from '@shared/ui';
 
 export default () => (
-  <View style={styles.container}>
-    <Text>Tab [Home|Settings]</Text>
+  <View
+    style={tw`flex-1 items-center justify-center bg-background dark:bg-dark-background`}
+  >
+    <Text style={tw`text-onBackground dark:text-dark-onBackground`}>
+      Tab [Home|Settings]
+    </Text>
   </View>
 );
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    flex: 1,
-    justifyContent: 'center',
-  },
-});

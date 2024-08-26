@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 
 import * as NavigationBar from 'expo-navigation-bar';
 
-import { Theme } from './use-theme';
+import { Theme } from '../config';
 
 export const useNavigationBar = (theme: Theme) => {
   const navigationBarColor = theme.colors.elevation.level2;
