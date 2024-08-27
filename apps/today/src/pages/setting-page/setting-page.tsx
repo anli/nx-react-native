@@ -10,6 +10,13 @@ const pageConfig = {
         { componentName: 'VersionCard' as const, className: 'mx-4' },
       ],
     },
+    {
+      componentName: 'List.Section' as const,
+      children: [
+        { componentName: 'List.Subheader' as const, children: 'Appearance' },
+        { componentName: 'DarkModeCard' as const, className: 'mx-4' },
+      ],
+    },
   ],
 };
 
