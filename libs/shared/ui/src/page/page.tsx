@@ -13,7 +13,7 @@ export const Page = ({
   children,
   renderHeader,
 }: PropsWithChildren<PageProps>) => (
-  <SafeAreaView edges={['top']}>
+  <SafeAreaView edges={['top']} style={tw`flex-1`}>
     {renderHeader?.({ style: tw`absolute w-full` })}
     {children}
   </SafeAreaView>
