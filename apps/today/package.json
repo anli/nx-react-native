@@ -39,7 +39,10 @@
     "react-native-paper": "*",
     "@expo/vector-icons": "*",
     "@react-navigation/native": "*",
-    "expo-navigation-bar": "*"
+    "expo-navigation-bar": "*",
+    "twrnc": "*",
+    "@faker-js/faker": "*",
+    "react-native-reanimated": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/today && cp yarn.lock apps/today",

@@ -1,4 +1,6 @@
-import { FlatList, FlatListProps } from 'react-native';
+import { FlatListProps } from 'react-native';
+
+import Animated from 'react-native-reanimated';
 
 import { Task } from '../model/task';
 import { useTasks } from '../model/use-tasks';
@@ -11,10 +13,10 @@ export const TaskList = ({ ...rest }: TaskListProps) => {
   const { data } = useTasks();
 
   return (
-    <FlatList
+    <Animated.FlatList
       {...rest}
       data={data}
-      renderItem={({ item }) => <TaskListItem id={item.id} />}
+      renderItem={({ item }) => <TaskListItem {...item} />}
     />
   );
 };
