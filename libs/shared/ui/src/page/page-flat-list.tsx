@@ -14,7 +14,7 @@ type PageFlatListProps = {
   render: (
     props: Pick<
       FlatListProps<unknown>,
-      'snapToOffsets' | 'onScroll' | 'ListHeaderComponent'
+      'snapToEnd' | 'snapToOffsets' | 'onScroll' | 'ListHeaderComponent'
     >
   ) => ReactElement;
 };
@@ -37,6 +37,7 @@ export const PageFlatList = ({
       )}
     >
       {render({
+        snapToEnd: false,
         snapToOffsets: [animatedPage.headerHeight],
         onScroll: animatedPage.scrollHandler,
         ListHeaderComponent: (
