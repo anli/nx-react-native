@@ -5,10 +5,10 @@ import { useDeviceContext } from 'twrnc';
 import { tw } from '../tailwind';
 
 import { useNavigationBar } from './use-navigation-bar';
-import { useTheme } from './use-theme';
+import { ThemeProvider, useTheme } from './use-theme';
 
-export const ThemeProvider = ({ children, ...rest }: ProviderProps) => {
-  const theme = useTheme();
+const ThemeDependentProvider = ({ children, ...rest }: ProviderProps) => {
+  const { theme } = useTheme();
   useNavigationBar(theme);
   useDeviceContext(tw);
 
@@ -18,5 +18,17 @@ export const ThemeProvider = ({ children, ...rest }: ProviderProps) => {
         {children}
       </PaperProvider>
     </NavigationThemeProvider>
+  );
+};
+
+export const UiProvider = ({ children, ...rest }: ProviderProps) => {
+  const { theme } = useTheme();
+  useNavigationBar(theme);
+  useDeviceContext(tw);
+
+  return (
+    <ThemeProvider>
+      <ThemeDependentProvider {...rest}>{children}</ThemeDependentProvider>
+    </ThemeProvider>
   );
 };
