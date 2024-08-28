@@ -1,10 +1,12 @@
-import { UiProvider } from '@shared/ui';
-import { Stack } from 'expo-router/stack';
+import { AuthenticationProvider, UiProvider } from '@shared/ui';
+import { Slot } from 'expo-router';
 
-export default () => (
-  <UiProvider>
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-    </Stack>
-  </UiProvider>
+const Root = () => (
+  <AuthenticationProvider>
+    <UiProvider>
+      <Slot />
+    </UiProvider>
+  </AuthenticationProvider>
 );
+
+export default Root;

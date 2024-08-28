@@ -44,7 +44,8 @@
     "@faker-js/faker": "*",
     "react-native-reanimated": "*",
     "expo-application": "*",
-    "@react-native-async-storage/async-storage": "*"
+    "@react-native-async-storage/async-storage": "*",
+    "expo-secure-store": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/today && cp yarn.lock apps/today",
