@@ -1,16 +1,13 @@
-import { StatusBar as NativeStatusBar } from 'expo-status-bar';
+import { ColorSchemeName } from 'react-native';
 
-import { useTheme } from './use-theme';
+import { StatusBar as NativeStatusBar } from 'expo-status-bar';
 
 const statusBarStyle = {
   dark: 'light',
   light: 'dark',
 } as const;
 
-export const StatusBar = () => {
-  const { themeName } = useTheme();
-
-  return (
-    <NativeStatusBar style={themeName ? statusBarStyle[themeName] : 'auto'} />
-  );
-};
+type StatusBarProps = { themeName: ColorSchemeName };
+export const StatusBar = ({ themeName }: StatusBarProps) => (
+  <NativeStatusBar style={themeName ? statusBarStyle[themeName] : 'auto'} />
+);

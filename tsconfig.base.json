@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@entities/authentication": ["libs/entities/authentication/src/index.ts"],
       "@entities/settings": ["libs/entities/settings/src/index.ts"],
+      "@features/authentication": ["libs/features/authentication/src/index.ts"],
       "@features/settings": ["libs/features/settings/src/index.ts"],
       "@pages/settings": ["libs/pages/settings/src/index.ts"],
       "@shared/ui": ["libs/shared/ui/src/index.ts"]

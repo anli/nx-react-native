@@ -1,7 +1,7 @@
 import { tw } from '@shared/ui';
 import { Card, CardProps, CardTitleProps } from 'react-native-paper';
 
-type DarkModeCardProps = Omit<CardProps, 'children' | 'elevation'> & {
+export type DarkModeCardProps = Omit<CardProps, 'children' | 'elevation'> & {
   titleProps?: Omit<CardTitleProps, 'title' | 'titleStyle'>;
 };
 

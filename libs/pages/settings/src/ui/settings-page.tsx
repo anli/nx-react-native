@@ -1,4 +1,9 @@
-import { DarkModeCard, settingsComponents } from '@entities/settings';
+import {
+  DarkModeCard,
+  DarkModeCardProps,
+  settingsComponents,
+} from '@entities/settings';
+import { SignOutCard } from '@features/authentication';
 import { DarkModeSwitch } from '@features/settings';
 import { PageScrollView, renderPageContent } from '@shared/ui';
 
@@ -16,17 +21,27 @@ const pageConfig = {
       componentName: 'List.Section' as const,
       children: [
         { componentName: 'List.Subheader' as const, children: 'Appearance' },
-        { componentName: 'DarkModeCard' as const, className: 'mx-4' },
+        { componentName: 'DarkModeWidget' as const, className: 'mx-4' },
+      ],
+    },
+    {
+      componentName: 'List.Section' as const,
+      children: [
+        { componentName: 'List.Subheader' as const, children: 'Account' },
+        { componentName: 'SignOutCard' as const, className: 'mx-4' },
       ],
     },
   ],
 };
 
+const DarkModeWidget = (props: DarkModeCardProps) => (
+  <DarkModeCard {...props} titleProps={{ right: () => <DarkModeSwitch /> }} />
+);
+
 const additionalComponents = {
   ...settingsComponents,
-  DarkModeCard: (
-    <DarkModeCard titleProps={{ right: () => <DarkModeSwitch /> }} />
-  ),
+  DarkModeWidget: <DarkModeWidget />,
+  SignOutCard: <SignOutCard />,
 };
 
 export const SettingsPage = () => (
