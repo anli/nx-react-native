@@ -1,10 +1,10 @@
-import { ThemeProvider } from '@shared/ui';
+import { UiProvider } from '@shared/ui';
 import { Stack } from 'expo-router/stack';
 
 export default () => (
-  <ThemeProvider>
+  <UiProvider>
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
-  </ThemeProvider>
+  </UiProvider>
 );

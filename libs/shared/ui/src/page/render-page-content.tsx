@@ -3,6 +3,7 @@ import { ReactNode, cloneElement } from 'react';
 import { List } from 'react-native-paper';
 import { ClassInput } from 'twrnc';
 
+import { DarkModeCard } from '../dark-mode-card';
 import { tw } from '../tailwind';
 import { VersionCard } from '../version-card';
 
@@ -12,6 +13,7 @@ const baseComponents = {
   VersionCard: <VersionCard />,
   // @ts-expect-error children will be passed in the clone element
   'List.Section': <List.Section />,
+  DarkModeCard: <DarkModeCard />,
 };
 
 type ComponentName = keyof typeof baseComponents;
