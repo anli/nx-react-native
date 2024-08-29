@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
+
 import { ThemeProvider as NavigationThemeProvider } from '@react-navigation/native';
 import { PaperProvider, ProviderProps } from 'react-native-paper';
-import { useDeviceContext } from 'twrnc';
+import { useAppColorScheme, useDeviceContext } from 'twrnc';
 
 import { tw } from '../tailwind';
 
@@ -9,15 +11,24 @@ import { useNavigationBar } from './use-navigation-bar';
 import { ThemeProvider, useTheme } from './use-theme';
 
 const ThemeDependentProvider = ({ children, ...rest }: ProviderProps) => {
-  const { theme } = useTheme();
+  const { theme, themeName } = useTheme();
+  const [, , setColorScheme] = useAppColorScheme(tw);
+
   useNavigationBar(theme);
-  useDeviceContext(tw);
+  useDeviceContext(tw, {
+    observeDeviceColorSchemeChanges: false,
+    initialColorScheme: 'device',
+  });
+  useEffect(() => {
+    setColorScheme(themeName);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [themeName]);
 
   return (
     <NavigationThemeProvider value={theme}>
       <PaperProvider theme={theme} {...rest}>
-        <StatusBar />
         {children}
+        <StatusBar themeName={themeName} />
       </PaperProvider>
     </NavigationThemeProvider>
   );

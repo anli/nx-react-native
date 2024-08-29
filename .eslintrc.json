@@ -111,7 +111,7 @@
         "react-native/no-raw-text": [
           "error",
           {
-            "skip": ["List.Subheader"]
+            "skip": ["List.Subheader", "Button"]
           }
         ]
       }
