@@ -2,6 +2,7 @@ import { ThemeProvider as NavigationThemeProvider } from '@react-navigation/nati
 import { PaperProvider, ProviderProps } from 'react-native-paper';
 import { useDeviceContext } from 'twrnc';
 
+import { StatusBar } from '../status-bar';
 import { tw } from '../tailwind';
 
 import { useNavigationBar } from './use-navigation-bar';
@@ -15,6 +16,7 @@ const ThemeDependentProvider = ({ children, ...rest }: ProviderProps) => {
   return (
     <NavigationThemeProvider value={theme}>
       <PaperProvider theme={theme} {...rest}>
+        <StatusBar />
         {children}
       </PaperProvider>
     </NavigationThemeProvider>
