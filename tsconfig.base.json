@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@entities/settings": ["libs/entities/settings/src/index.ts"],
+      "@features/settings": ["libs/features/settings/src/index.ts"],
+      "@pages/settings": ["libs/pages/settings/src/index.ts"],
       "@shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },

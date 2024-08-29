@@ -1,5 +1,5 @@
 {
-  "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
+  "extends": ["plugin:@nx/react", "../../../.eslintrc.json"],
   "ignorePatterns": ["!**/*", ".expo", "web-build", "cache", "dist"],
   "overrides": [
     {
@@ -10,7 +10,7 @@
       "files": ["*.ts", "*.tsx"],
       "rules": {},
       "parserOptions": {
-        "project": ["apps/today/tsconfig.*?.json"]
+        "project": ["libs/features/settings/tsconfig.*?.json"]
       }
     },
     {
