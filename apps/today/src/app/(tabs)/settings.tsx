@@ -1,3 +1,3 @@
-import { SettingPage } from '../../pages';
+import { SettingsPage } from '@pages/settings';
 
-export default () => <SettingPage />;
+export default () => <SettingsPage />;

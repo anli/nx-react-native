@@ -1,3 +1,5 @@
+import { DarkModeCard, settingsComponents } from '@entities/settings';
+import { DarkModeSwitch } from '@features/settings';
 import { PageScrollView, renderPageContent } from '@shared/ui';
 
 const pageConfig = {
@@ -20,8 +22,15 @@ const pageConfig = {
   ],
 };
 
-export const SettingPage = () => (
+const additionalComponents = {
+  ...settingsComponents,
+  DarkModeCard: (
+    <DarkModeCard titleProps={{ right: () => <DarkModeSwitch /> }} />
+  ),
+};
+
+export const SettingsPage = () => (
   <PageScrollView title={pageConfig.title}>
-    {renderPageContent(pageConfig.children)}
+    {renderPageContent(pageConfig.children, additionalComponents)}
   </PageScrollView>
 );
