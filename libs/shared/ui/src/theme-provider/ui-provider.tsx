@@ -2,9 +2,9 @@ import { ThemeProvider as NavigationThemeProvider } from '@react-navigation/nati
 import { PaperProvider, ProviderProps } from 'react-native-paper';
 import { useDeviceContext } from 'twrnc';
 
-import { StatusBar } from '../status-bar';
 import { tw } from '../tailwind';
 
+import { StatusBar } from './status-bar';
 import { useNavigationBar } from './use-navigation-bar';
 import { ThemeProvider, useTheme } from './use-theme';
 

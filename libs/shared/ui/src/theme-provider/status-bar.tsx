@@ -1,6 +1,6 @@
 import { StatusBar as NativeStatusBar } from 'expo-status-bar';
 
-import { useTheme } from '../theme-provider';
+import { useTheme } from './use-theme';
 
 const statusBarStyle = {
   dark: 'light',
