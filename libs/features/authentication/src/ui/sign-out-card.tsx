@@ -8,7 +8,7 @@ export const SignOutCard = (props: SignOutCardProps) => {
   const { signOut } = useSession();
   const handleSignOut = () => {
     // show confirmation dialog and log out user
-    signOut();
+    void signOut();
   };
 
   return (

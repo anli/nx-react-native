@@ -20,14 +20,16 @@
       "bundleIdentifier": "com.anlitz.today",
       "config": {
         "usesNonExemptEncryption": false
-      }
+      },
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.anlitz.today"
+      "package": "com.anlitz.today",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -38,7 +40,8 @@
         "expo-build-properties",
         {
           "ios": {
-            "newArchEnabled": true
+            "newArchEnabled": true,
+            "useFrameworks": "static"
           },
           "android": {
             "newArchEnabled": true
@@ -50,7 +53,10 @@
         {
           "faceIDPermission": "Allow $(PRODUCT_NAME) to access your Face ID biometric data."
         }
-      ]
+      ],
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      "@react-native-google-signin/google-signin"
     ],
     "extra": {
       "eas": {

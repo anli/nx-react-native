@@ -5,18 +5,20 @@ import {
   useMemo,
 } from 'react';
 
-import { useSecureStorage } from '@shared/ui';
+import { useFirebaseAuth } from './use-firebase-auth';
 
 const AuthContext = createContext<{
-  signIn: () => void;
-  signOut: () => void;
+  signIn: () => Promise<void>;
+  signOut: () => Promise<void>;
   session?: string | null;
   isLoading: boolean;
+  isAuthenticated: boolean;
 }>({
-  signIn: () => null,
-  signOut: () => null,
+  signIn: () => Promise.resolve(),
+  signOut: () => Promise.resolve(),
   session: null,
   isLoading: false,
+  isAuthenticated: false,
 });
 
 export const useSession = () => {
@@ -31,21 +33,21 @@ export const useSession = () => {
 };
 
 export const SessionProvider = ({ children }: PropsWithChildren) => {
-  const [[isLoading, session], setSession] = useSecureStorage('session');
+  const { isLoading, data: user, signIn, signOut } = useFirebaseAuth();
+  const isAuthenticated = !!user;
 
   const value = useMemo(
     () => ({
-      signIn: () => {
-        // Perform sign-in logic here
-        setSession('xxx');
+      signIn: async () => {
+        await signIn();
       },
-      signOut: () => {
-        setSession(null);
+      signOut: async () => {
+        await signOut();
       },
-      session,
       isLoading,
+      isAuthenticated,
     }),
-    [isLoading, session, setSession]
+    [isAuthenticated, isLoading, signIn, signOut]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
