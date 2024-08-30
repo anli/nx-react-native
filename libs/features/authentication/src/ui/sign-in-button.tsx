@@ -12,13 +12,13 @@ export const SignInButton = ({
 }: SignInButtonProps) => {
   const { signIn } = useSession();
 
-  const handleSignIn = () => {
-    signIn();
+  const handleSignIn = async () => {
+    await signIn();
     router.replace('/');
   };
 
   return (
-    <Button mode="contained" onPress={handleSignIn} {...rest}>
+    <Button mode="contained" onPress={() => void handleSignIn()} {...rest}>
       {children}
     </Button>
   );
