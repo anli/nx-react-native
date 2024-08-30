@@ -11,24 +11,24 @@ const pageConfig = {
   title: 'Settings',
   children: [
     {
-      componentName: 'List.Section' as const,
+      componentName: 'List.Section',
       children: [
-        { componentName: 'List.Subheader' as const, children: 'About' },
-        { componentName: 'VersionCard' as const, className: 'mx-4' },
+        { componentName: 'List.Subheader', children: 'About' },
+        { componentName: 'VersionCard', className: 'mx-4' },
       ],
     },
     {
-      componentName: 'List.Section' as const,
+      componentName: 'List.Section',
       children: [
-        { componentName: 'List.Subheader' as const, children: 'Appearance' },
-        { componentName: 'DarkModeWidget' as const, className: 'mx-4' },
+        { componentName: 'List.Subheader', children: 'Appearance' },
+        { componentName: 'DarkModeWidget', className: 'mx-4' },
       ],
     },
     {
-      componentName: 'List.Section' as const,
+      componentName: 'List.Section',
       children: [
-        { componentName: 'List.Subheader' as const, children: 'Account' },
-        { componentName: 'SignOutCard' as const, className: 'mx-4' },
+        { componentName: 'List.Subheader', children: 'Account' },
+        { componentName: 'SignOutCard', className: 'mx-4' },
       ],
     },
   ],
