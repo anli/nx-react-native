@@ -9,9 +9,11 @@ export const useNavigationBar = (theme: Theme) => {
   const navigationBarColor = theme.colors.elevation.level2;
 
   useEffect(() => {
-    Platform.OS === 'android' &&
+    if (Platform.OS === 'android') {
       void NavigationBar.setBackgroundColorAsync(navigationBarColor);
-  }, [navigationBarColor]);
+      void NavigationBar.setButtonStyleAsync(theme.dark ? 'light' : 'dark');
+    }
+  }, [navigationBarColor, theme.dark]);
 
   return NavigationBar;
 };

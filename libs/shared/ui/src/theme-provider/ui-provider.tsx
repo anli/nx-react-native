@@ -6,14 +6,15 @@ import { useAppColorScheme, useDeviceContext } from 'twrnc';
 
 import { tw } from '../tailwind';
 
-import { StatusBar } from './status-bar';
 import { useNavigationBar } from './use-navigation-bar';
+import { useStatusBar } from './use-status-bar';
 import { ThemeProvider, useTheme } from './use-theme';
 
 const ThemeDependentProvider = ({ children, ...rest }: ProviderProps) => {
   const { theme, themeName } = useTheme();
   const [, , setColorScheme] = useAppColorScheme(tw);
 
+  useStatusBar(themeName);
   useNavigationBar(theme);
   useDeviceContext(tw, {
     observeDeviceColorSchemeChanges: false,
@@ -28,7 +29,6 @@ const ThemeDependentProvider = ({ children, ...rest }: ProviderProps) => {
     <NavigationThemeProvider value={theme}>
       <PaperProvider theme={theme} {...rest}>
         {children}
-        <StatusBar themeName={themeName} />
       </PaperProvider>
     </NavigationThemeProvider>
   );
