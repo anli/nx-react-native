@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import { ThemeProvider as NavigationThemeProvider } from '@react-navigation/native';
+import * as SystemUI from 'expo-system-ui';
 import { PaperProvider, ProviderProps } from 'react-native-paper';
 import { useAppColorScheme, useDeviceContext } from 'twrnc';
 
@@ -22,6 +23,7 @@ const ThemeDependentProvider = ({ children, ...rest }: ProviderProps) => {
   });
   useEffect(() => {
     setColorScheme(themeName);
+    void SystemUI.setBackgroundColorAsync(theme.colors.background);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [themeName]);
 
