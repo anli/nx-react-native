@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactElement } from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
 import { FlatListProps } from 'react-native';
 
 import { Appbar } from 'react-native-paper';
@@ -16,7 +16,7 @@ type PageFlatListProps = {
       FlatListProps<unknown>,
       'snapToEnd' | 'snapToOffsets' | 'onScroll' | 'ListHeaderComponent'
     >
-  ) => ReactElement;
+  ) => ReactNode;
 };
 
 export const PageFlatList = ({
