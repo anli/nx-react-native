@@ -1,3 +1,5 @@
 import { SettingsPage } from '@pages/settings';
 
-export default () => <SettingsPage />;
+export default function SettingTab() {
+  return <SettingsPage />;
+}

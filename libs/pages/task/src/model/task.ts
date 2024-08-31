@@ -14,6 +14,6 @@ const createMockTask = () => ({
   name: faker.lorem.words(),
 });
 
-export const mockTasks = faker.helpers.multiple(createMockTask, {
+export const mockTasks = faker.helpers.multiple<Task>(createMockTask, {
   count: 30,
 });

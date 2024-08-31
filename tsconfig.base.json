@@ -21,6 +21,7 @@
       "@features/settings": ["libs/features/settings/src/index.ts"],
       "@pages/authentication": ["libs/pages/authentication/src/index.ts"],
       "@pages/settings": ["libs/pages/settings/src/index.ts"],
+      "@pages/task": ["libs/pages/task/src/index.ts"],
       "@shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },

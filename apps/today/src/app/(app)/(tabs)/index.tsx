@@ -1,3 +1,5 @@
-import { HomePage } from '../../../pages';
+import { TaskListPage } from '@pages/task';
 
-export default () => <HomePage />;
+export default function HomeTab() {
+  return <TaskListPage />;
+}
