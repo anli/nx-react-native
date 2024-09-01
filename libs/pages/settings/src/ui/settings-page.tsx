@@ -1,9 +1,13 @@
-import { PageScrollView, renderPageContent } from '@shared/ui';
+import { usePageContent } from '@entities/page';
+import { PageScrollView } from '@shared/ui';
+import { PageWidget } from '@widgets/page';
 
-import { settingsPageConfig, components } from '../model/page-config';
+export const SettingsPage = () => {
+  const { data } = usePageContent('settings-page');
 
-export const SettingsPage = () => (
-  <PageScrollView title={settingsPageConfig.title}>
-    {renderPageContent(settingsPageConfig.children, components)}
-  </PageScrollView>
-);
+  return (
+    <PageScrollView title={data?.title}>
+      <PageWidget id="settings-page" />
+    </PageScrollView>
+  );
+};

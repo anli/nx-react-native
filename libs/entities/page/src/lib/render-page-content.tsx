@@ -1,11 +1,10 @@
 import { ReactNode, cloneElement } from 'react';
 import { View, Text } from 'react-native';
 
+import { tw } from '@shared/ui';
 import { Image } from 'expo-image';
 import { List } from 'react-native-paper';
 import { ClassInput } from 'twrnc';
-
-import { tw } from '../tailwind';
 
 export type PageComponent = Record<string, JSX.Element>;
 

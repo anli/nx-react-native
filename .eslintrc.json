@@ -32,6 +32,14 @@
                 ]
               },
               {
+                "sourceTag": "type:widgets",
+                "onlyDependOnLibsWithTags": [
+                  "type:features",
+                  "type:entities",
+                  "type:shared"
+                ]
+              },
+              {
                 "sourceTag": "type:features",
                 "onlyDependOnLibsWithTags": ["type:entities", "type:shared"]
               },

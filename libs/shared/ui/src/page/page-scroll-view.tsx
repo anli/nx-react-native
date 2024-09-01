@@ -9,7 +9,7 @@ import { Page } from './page';
 import { useAnimatedPage } from './use-animated-page';
 
 type PageScrollViewProps = {
-  title: string;
+  title?: string;
 };
 
 export const PageScrollView = ({
