@@ -59,3 +59,6 @@ android/
 ios/
 *.tar.gz
 *.apk
+
+google-services.json
+GoogleService-Info.plist
