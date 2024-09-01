@@ -10,7 +10,7 @@ import { Page } from './page';
 import { useAnimatedPage } from './use-animated-page';
 
 type PageFlatListProps = {
-  title: string;
+  title?: string;
   render: (
     props: Pick<
       FlatListProps<unknown>,

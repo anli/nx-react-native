@@ -1,25 +1,32 @@
-import { PageFlatList, renderPageContent } from '@shared/ui';
+import { usePageContent } from '@entities/page';
+import { PageFlatList } from '@shared/ui';
+import { PageWidget } from '@widgets/page';
 
-import {
-  taskListPageConfig,
-  components as pageComponents,
-  TaskListWidget,
-} from '../model/page-config';
+import { TaskCheckbox } from './task-checkbox';
+import { TaskList, TaskListProps } from './task-list';
 
-const pageConfig = {
-  title: 'Today',
-};
-
-export const TaskListPage = () => (
-  <PageFlatList
-    title={pageConfig.title}
-    render={(props) => {
-      const components = {
-        ...pageComponents,
-        TaskListWidget: <TaskListWidget {...props} />,
-      };
-
-      return renderPageContent(taskListPageConfig.children, components);
+const TaskListWidget = (props: TaskListProps) => (
+  <TaskList
+    {...props}
+    listItemProps={{
+      right: ({ itemId, ...rest }) => <TaskCheckbox id={itemId} {...rest} />,
     }}
   />
 );
+
+export const TaskListPage = () => {
+  const { data } = usePageContent('task-list-page');
+
+  return (
+    <PageFlatList
+      title={data?.title}
+      render={(props) => {
+        const components = {
+          TaskListWidget: <TaskListWidget {...props} />,
+        };
+
+        return <PageWidget id="task-list-page" components={components} />;
+      }}
+    />
+  );
+};
