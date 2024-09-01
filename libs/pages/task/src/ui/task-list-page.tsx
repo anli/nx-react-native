@@ -1,9 +1,8 @@
 import { usePageContent } from '@entities/page';
+import { TaskList, type TaskListProps } from '@entities/task';
+import { TaskCheckbox } from '@features/task';
 import { PageFlatList } from '@shared/ui';
 import { PageWidget } from '@widgets/page';
-
-import { TaskCheckbox } from './task-checkbox';
-import { TaskList, TaskListProps } from './task-list';
 
 const TaskListWidget = (props: TaskListProps) => (
   <TaskList

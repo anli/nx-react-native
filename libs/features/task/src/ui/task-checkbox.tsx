@@ -1,9 +1,7 @@
 import { ComponentProps, useEffect, useState } from 'react';
 
+import { Task, useTask } from '@entities/task';
 import { Checkbox } from 'react-native-paper';
-
-import { Task } from '../model/task';
-import { useTask } from '../model/use-task';
 
 export const TaskCheckbox = ({
   id,
