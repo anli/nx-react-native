@@ -3,9 +3,14 @@ import {
   createContext,
   type PropsWithChildren,
   useMemo,
+  useEffect,
+  useState,
 } from 'react';
 
-import { useFirebaseAuth } from './use-firebase-auth';
+import { supabase } from '@shared/lib';
+import { Session } from '@supabase/supabase-js';
+
+import { useGoogleAuth } from './use-google-auth';
 
 const AuthContext = createContext<{
   signIn: () => Promise<void>;
@@ -33,17 +38,26 @@ export const useSession = () => {
 };
 
 export const SessionProvider = ({ children }: PropsWithChildren) => {
-  const { isLoading, data: user, signIn, signOut } = useFirebaseAuth();
-  const isAuthenticated = !!user;
+  const { isLoading, signIn, signOut } = useGoogleAuth();
+  const [session, setSession] = useState<Session | null>(null);
+  const isAuthenticated = !!session;
+
+  useEffect(() => {
+    void supabase.auth.getSession().then(({ data }) => {
+      setSession(data.session);
+    });
+
+    supabase.auth.onAuthStateChange((_event, data) => {
+      setSession(data);
+    });
+  }, []);
 
   const value = useMemo(
     () => ({
       signIn: async () => {
         await signIn();
       },
-      signOut: async () => {
-        await signOut();
-      },
+      signOut,
       isLoading,
       isAuthenticated,
     }),
