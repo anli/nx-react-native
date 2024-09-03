@@ -1,13 +1,24 @@
+import { useMemo } from 'react';
 import { AppState } from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createClient } from '@supabase/supabase-js';
 import 'react-native-url-polyfill/auto';
+import invariant from 'tiny-invariant';
 
 import type { Database } from './database.types';
 
-const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL ?? '';
-const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? '';
+invariant(
+  process.env.EXPO_PUBLIC_SUPABASE_URL,
+  'EXPO_PUBLIC_SUPABASE_URL is not set'
+);
+invariant(
+  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY,
+  'EXPO_PUBLIC_SUPABASE_ANON_KEY is not set'
+);
+
+const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
 
 export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, {
   auth: {
@@ -30,3 +41,5 @@ AppState.addEventListener('change', (state) => {
     void supabase.auth.stopAutoRefresh();
   }
 });
+
+export const useSupabase = () => useMemo(() => supabase, []);

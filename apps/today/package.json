@@ -49,7 +49,10 @@
     "expo-image": "*",
     "@react-native-google-signin/google-signin": "*",
     "@supabase/supabase-js": "*",
-    "react-native-url-polyfill": "*"
+    "react-native-url-polyfill": "*",
+    "tiny-invariant": "*",
+    "@tanstack/react-query": "*",
+    "@supabase-cache-helpers/postgrest-react-query": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/today && cp yarn.lock apps/today",

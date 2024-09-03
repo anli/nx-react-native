@@ -21,7 +21,13 @@ const pages = [
         componentName: 'List.Section',
         children: [
           { componentName: 'List.Subheader', children: 'Account' },
-          { componentName: 'SignOutCard', className: 'mx-4' },
+          { componentName: 'AccountCard', className: 'mx-4 rounded-b-none' },
+          {
+            componentName: 'Divider',
+            className:
+              'mx-4 bg-outlineVariant dark:bg-dark-onSecondaryContainer',
+          },
+          { componentName: 'SignOutCard', className: 'mx-4 rounded-t-none' },
         ],
       },
     ],
