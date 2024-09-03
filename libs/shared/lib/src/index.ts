@@ -1,1 +1,2 @@
-export { supabase } from './supabase/supabase';
+export { supabase, useSupabase } from './supabase/supabase';
+export type { Database } from './supabase/database.types';

@@ -15,13 +15,13 @@ import { useGoogleAuth } from './use-google-auth';
 const AuthContext = createContext<{
   signIn: () => Promise<void>;
   signOut: () => Promise<void>;
-  session?: string | null;
+  data?: Session | null;
   isLoading: boolean;
   isAuthenticated: boolean;
 }>({
   signIn: () => Promise.resolve(),
   signOut: () => Promise.resolve(),
-  session: null,
+  data: null,
   isLoading: false,
   isAuthenticated: false,
 });
@@ -60,8 +60,9 @@ export const SessionProvider = ({ children }: PropsWithChildren) => {
       signOut,
       isLoading,
       isAuthenticated,
+      data: session,
     }),
-    [isAuthenticated, isLoading, signIn, signOut]
+    [isAuthenticated, isLoading, signIn, signOut, session]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

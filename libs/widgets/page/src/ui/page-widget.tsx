@@ -1,3 +1,4 @@
+import { AccountCard } from '@entities/authentication';
 import {
   usePageContent,
   renderPageContent,
@@ -21,6 +22,7 @@ const pageComponents = {
   DarkModeCard: <DarkModeCard />,
   DarkModeWidget: <DarkModeWidget />,
   SignOutCard: <SignOutCard />,
+  AccountCard: <AccountCard />,
 };
 
 type PageWidgetProps = {

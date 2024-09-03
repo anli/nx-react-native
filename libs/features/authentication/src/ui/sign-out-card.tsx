@@ -1,6 +1,5 @@
 import { useSession } from '@entities/authentication';
-import { tw } from '@shared/ui';
-import { Card, CardProps } from 'react-native-paper';
+import { Card, CardProps, IconButton } from 'react-native-paper';
 
 type SignOutCardProps = Omit<CardProps, 'children' | 'elevation'>;
 
@@ -13,7 +12,10 @@ export const SignOutCard = (props: SignOutCardProps) => {
 
   return (
     <Card mode="contained" {...props} onPress={handleSignOut}>
-      <Card.Title title="Sign Out" titleStyle={tw`py-1`} />
+      <Card.Title
+        title="Sign Out"
+        right={() => <IconButton icon="chevron-right" />}
+      />
     </Card>
   );
 };

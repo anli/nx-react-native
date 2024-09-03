@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 import { tw } from '@shared/ui';
 import { Image } from 'expo-image';
-import { List } from 'react-native-paper';
+import { Divider, List } from 'react-native-paper';
 import { ClassInput } from 'twrnc';
 
 export type PageComponent = Record<string, JSX.Element>;
@@ -16,6 +16,7 @@ const baseComponents: PageComponent = {
   View: <View />,
   Image: <Image />,
   Text: <Text />,
+  Divider: <Divider />,
 };
 
 const getDefaultStyle = (componentName: ComponentName): ClassInput[] => {
