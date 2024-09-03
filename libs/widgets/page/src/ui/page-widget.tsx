@@ -9,7 +9,11 @@ import {
   DarkModeCard,
   VersionCard,
 } from '@entities/settings';
-import { SignInButton, SignOutCard } from '@features/authentication';
+import {
+  ProfileForm,
+  SignInButton,
+  SignOutCard,
+} from '@features/authentication';
 import { DarkModeSwitch } from '@features/settings';
 
 const DarkModeWidget = (props: DarkModeCardProps) => (
@@ -23,6 +27,7 @@ const pageComponents = {
   DarkModeWidget: <DarkModeWidget />,
   SignOutCard: <SignOutCard />,
   AccountCard: <AccountCard />,
+  ProfileForm: <ProfileForm />,
 };
 
 type PageWidgetProps = {

@@ -55,7 +55,6 @@ const pages = [
           },
         ],
       },
-
       {
         componentName: 'View',
         className: 'justify-end gap-4 my-6',
@@ -73,6 +72,16 @@ const pages = [
           },
           { componentName: 'SignInButton', className: 'mx-4' },
         ],
+      },
+    ],
+  },
+  {
+    id: 'profile-page',
+    title: 'Profile',
+    children: [
+      {
+        componentName: 'ProfileForm',
+        className: 'text-lg mx-4',
       },
     ],
   },
