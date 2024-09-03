@@ -52,7 +52,10 @@
     "react-native-url-polyfill": "*",
     "tiny-invariant": "*",
     "@tanstack/react-query": "*",
-    "@supabase-cache-helpers/postgrest-react-query": "*"
+    "@supabase-cache-helpers/postgrest-react-query": "*",
+    "react-hook-form": "*",
+    "@hookform/resolvers": "*",
+    "yup": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/today && cp yarn.lock apps/today",

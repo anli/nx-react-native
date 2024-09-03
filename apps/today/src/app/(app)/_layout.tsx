@@ -15,7 +15,7 @@ export default function AppLayout() {
   }
 
   return (
-    <Stack>
+    <Stack screenOptions={{ headerBackTitle: 'Back' }}>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
   );
